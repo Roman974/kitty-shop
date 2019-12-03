@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_one :cart
-  has_many :orders
+  has_many :items #En tant que vendeur
+  has_many :orders # Là où se trouve les items achetés
 end
