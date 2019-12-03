@@ -28,7 +28,7 @@ class OrdersController < ApplicationController
   private 
 
   def order_params
-    params.require(:order).permit(:user, :items)
+    params.require(:order).permit(:cart_id)
   end
 
 
