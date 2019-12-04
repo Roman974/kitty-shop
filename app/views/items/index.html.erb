@@ -1,4 +1,10 @@
 <%@items.each do |item|%>
+  <%=item.image_url%>
   <%=item.title%>
+  <p><%=item.price%>€</p>
+  <%= button_to "Mettre dans panier", %>
 <% end %>
+
+
+
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
