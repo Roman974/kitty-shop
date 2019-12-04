@@ -1,0 +1,10 @@
+<%@items.each do |item|%>
+  <img src="<%= item.image_url %>">
+  <%=item.title%>
+  <p><%=item.price%>€</p>
+  <%= button_to "Mettre dans le panier", {controller: "join_table_cart_items", action: "create", item: item.id} , method: 'post' %>
+<% end %>
+
+
+
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
