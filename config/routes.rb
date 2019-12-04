@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :orders
   resources :items
   resources :cart
+  resources :user
   root 'items#index'
 end
