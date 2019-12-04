@@ -16,7 +16,7 @@ class JoinTableCartItemsController < ApplicationController
 
   def destoy
     @cart = Cart.find_by(user: current_user)
-    @item = JoinTableCartItems.find_by(item: params[:item])
+    @item = JoinTableCartItems.find_by(item: params[:item], cart: @cart)
     @item.destroy
     redirect_to cart_path(@cart)
   end
