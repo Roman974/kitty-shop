@@ -2,7 +2,7 @@
   <%=item.image_url%>
   <%=item.title%>
   <p><%=item.price%>€</p>
-  <%= button_to "Mettre dans panier", %>
+  <%= link_to "Mettre dans le panier", {controller: "join_table_cart_items", action: "create", item: item.id} , method: 'post' %>
 <% end %>
 
 

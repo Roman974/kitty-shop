@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :items
   resources :cart
   resources :user
+  resources :join_table_cart_items
   root 'items#index'
 end
