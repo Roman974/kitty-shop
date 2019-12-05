@@ -1,2 +1,9 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<%=@item.title%>
+<%=@item.description%>
+<%= image_tag(@item.image_url, style:"width: 25%") if @item.image_url != nil %>
+<p><%=@item.price%>€</p>
+<% if user_signed_in? %>
+  <%= button_to "Mettre dans le panier", {controller: "join_table_cart_items", action: "create", item: @item.id} , method: 'post' %>
+<% else %>
+  <p>Connectez vous pour ajouter cet objet dans votre panier</p>
+<% end %>

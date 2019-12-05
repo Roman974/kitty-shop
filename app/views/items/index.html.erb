@@ -1,8 +1,8 @@
 <%@items.each do |item|%>
-  <img src="<%= item.image_url %>">
-  <%=item.title%>
+  <%= image_tag(item.image_url, style:"width: 25%") if item.image_url != nil %>
+  <%= link_to item.title, item_path(item)%>
   <p><%=item.price%>€</p>
-  <%= button_to "Mettre dans le panier", {controller: "join_table_cart_items", action: "create", item: item.id} , method: 'post' %>
+  <%= button_to "Mettre dans le panier", {controller: "join_table_cart_items", action: "create", item: item.id} , method: 'post' if user_signed_in? %>
 <% end %>
 
 
